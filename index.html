@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Shop</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      color: #222;
+    }
+
+    header {
+      background: #111;
+      color: white;
+      padding: 18px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h2 { margin: 0; }
+
+    #cart {
+      font-size: 16px;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .product {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px #0001;
+    }
+
+    .product img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .product h3 {
+      margin: 12px 0 6px;
+    }
+
+    .price {
+      color: #666;
+      margin-bottom: 12px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      border: 0;
+      border-radius: 6px;
+      background: #111;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #333;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h2>Mini Shop</h2>
+    <div id="cart">🛒 Cart: 0</div>
+  </header>
+
+  <main>
+    <h1>Products</h1>
+
+    <div class="products">
+
+      <div class="product">
+        <img src="https://picsum.photos/400/300?random=1" alt="T-Shirt">
+        <h3>T-Shirt</h3>
+        <div class="price">₹499</div>
+        <button onclick="addToCart()">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="https://picsum.photos/400/300?random=2" alt="Shoes">
+        <h3>Shoes</h3>
+        <div class="price">₹1,499</div>
+        <button onclick="addToCart()">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="https://picsum.photos/400/300?random=3" alt="Watch">
+        <h3>Watch</h3>
+        <div class="price">₹999</div>
+        <button onclick="addToCart()">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="https://picsum.photos/400/300?random=4" alt="Bag">
+        <h3>Bag</h3>
+        <div class="price">₹799</div>
+        <button onclick="addToCart()">Add to Cart</button>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    let cart = 0;
+
+    function addToCart() {
+      cart++;
+      document.getElementById("cart").textContent = "🛒 Cart: " + cart;
+    }
+  </script>
+
+</body>
+</html>
